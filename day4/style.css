@@ -1,0 +1,16 @@
+:root {
+  --bg: #fff;
+  --text: #111;
+  --warning: orange;
+  --over: red;
+  /* …other tokens… */
+}
+
+body.dark {
+  --bg: #111;
+  --text: #eee;
+  /* …dark versions of all tokens… */
+}
+
+.warning { color: var(--warning); }               /* orange */
+.over    { color: var(--over); font-weight: 700; } /* red + bold */

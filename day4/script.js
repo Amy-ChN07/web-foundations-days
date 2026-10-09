@@ -1,7 +1,7 @@
 //creating the elements
 const note=document.querySelector("#note-text");
-const charCounter=document.querySelector("#char-count");
-const wordCounter= document.querySelector("#word-count");
+const charCount=document.querySelector("#char-count");
+const wordCount= document.querySelector("#word-count");
 const clearBtn=document.querySelector("#clear-button");
 const themeBtn=document.querySelector("#toggle-button");
 
@@ -23,11 +23,11 @@ function updateCounts() {
   const chars = text.length;
   const words = countWords(text);
 
-  charCounter.textContent = `${chars} / ${MAX} characters`;
-  wordCounter.textContent = `${words} words`;
+  charCount.textContent = `${chars} / ${MAX} characters`;
+  wordCount.textContent = `${words} words`;
 
-  charCounter.classList.toggle('warning', chars > WARN_AT && chars <= MAX);
-  charCounter.classList.toggle('over',    chars > MAX);
+  charCount.classList.toggle('warning', chars > WARN_AT && chars <= MAX);
+  charCount.classList.toggle('over',    chars > MAX);
 }
 
 // ---------- Draft save ----------

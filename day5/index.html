@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <style>
+        /* Basic styling to make it presentable */
+        body { font-family: sans-serif; margin: 2rem; }
+        .user-card { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+        #status { font-weight: bold; margin: 1rem 0; color: #333; }
+        .hidden { display: none; }
+    </style>
+    <!-- 'defer' ensures HTML parses before JS runs -->
+    <script src="users.js" defer></script>
+</head>
+<body>
+    <h1>User Directory</h1>
+    
+    <!-- Button to trigger the fetch -->
+    <button id="load-users">Load Users</button>
+
+    <br><br>
+
+    <!-- Labelled input as requested -->
+    <label for="filter-input">Filter by Name:</label>
+    <input type="text" id="filter-input" placeholder="Type a name...">
+
+    <!-- Status message paragraph -->
+    <p id="status" aria-live="polite"></p>
+
+    <!-- Empty list for users -->
+    <ul id="users-list"></ul>
+
+</body>
+</html>

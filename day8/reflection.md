@@ -1,0 +1,10 @@
+# Day 8 Reflection
+
+**What was the most difficult concept in the course, and how did you overcome it?**
+The most difficult concept for me was understanding database transactions and concurrency, specifically how to prevent race conditions without absolutely destroying system performance. In previous modules, we just wrote queries and assumed they worked. Learning about ACID properties, row-level locks (`FOR UPDATE`), and the difference between optimistic and pessimistic locking felt like stepping into a completely different dimension. I overcame this by building a small sandbox project simulating a bank transfer and a ticketing system. By intentionally writing a script that fired 100 concurrent requests to buy the same item, I was able to see the double-booking happen in real-time, and then applied transactions until the system successfully rejected the 99 incorrect requests. 
+
+**Which part of your capstone would you improve, based on the feedback you received?**
+Based on the feedback from my instructors, I would improve my API design—specifically around error handling and rate limiting. My initial design assumed everything would go right, but during the big sale scenario, requests will fail. I would implement more robust HTTP status codes (e.g., 429 Too Many Requests instead of 500 Internal Server Error) and add clear, actionable error messages for the frontend to display to the user when a seat is locked by someone else.
+
+**What will you learn next?**
+Next, I want to dive deep into distributed systems and message brokers, like Kafka or RabbitMQ. Our design used Redis for a basic virtual waiting room, but I want to learn how to use asynchronous messaging to decouple microservices, ensuring that even if the payment service goes down temporarily, the order isn't lost, and the user experience remains smooth.
